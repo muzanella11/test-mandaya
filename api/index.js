@@ -1,9 +1,5 @@
-import explore from './modules/explore'
-import property from './modules/property'
-import auth from './modules/auth'
+import patients from './modules/patients'
 
 export default {
-  explore,
-  property,
-  auth
+  patients
 }
