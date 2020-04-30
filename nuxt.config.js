@@ -1,7 +1,13 @@
+require('dotenv').config()
+
+const ENVIRONMENT = process.env.ENVIRONMENT
+const CONFIGENVIRONMENT = require(`./config/${ENVIRONMENT.toLowerCase()}.json`)
+
 const colors = require('vuetify/es5/util/colors').default
 
 module.exports = {
   mode: 'universal',
+  env: CONFIGENVIRONMENT.env,
   /*
   ** Headers of the page
   */

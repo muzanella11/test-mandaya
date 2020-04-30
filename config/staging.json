@@ -1,0 +1,6 @@
+{
+  "env": {
+    "environment": "staging",
+    "baseUrl": "https://5e819792c130270016a372aa.mockapi.io"
+  }
+}
