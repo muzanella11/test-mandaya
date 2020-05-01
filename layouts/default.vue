@@ -59,7 +59,28 @@
     </v-app-bar>
     <v-content>
       <v-container>
-        <nuxt />
+        <v-row no-gutters>
+          <v-col
+            cols="9"
+          >
+            Page
+          </v-col>
+
+          <v-col
+            cols="3"
+            class="text-lg-right"
+          >
+            Halo Admin
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col
+            cols="12"
+          >
+            <nuxt />
+          </v-col>
+        </v-row>
       </v-container>
     </v-content>
     <v-navigation-drawer
