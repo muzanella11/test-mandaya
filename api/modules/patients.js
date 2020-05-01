@@ -34,6 +34,34 @@ export default {
     return request
   },
 
+  families (id) {
+    let cancel
+    const CANCEL_TOKEN = `${NAMESPACE}_FAMILIES`
+    const request = resource.get(`${endpoint.patients.index}/${id}/families`, {
+      cancelToken: new AxiosCancelToken(cancelRequest => {
+        cancel = cancelRequest
+      })
+    })
+
+    window[CANCEL_TOKEN] = cancel
+
+    return request
+  },
+
+  medicineUsage (id) {
+    let cancel
+    const CANCEL_TOKEN = `${NAMESPACE}_MEDICINE_USAGE`
+    const request = resource.get(`${endpoint.patients.index}/${id}/medicineusage`, {
+      cancelToken: new AxiosCancelToken(cancelRequest => {
+        cancel = cancelRequest
+      })
+    })
+
+    window[CANCEL_TOKEN] = cancel
+
+    return request
+  },
+
   create (data) {
     let cancel
     const CANCEL_TOKEN = `${NAMESPACE}_CREATE`
@@ -48,10 +76,10 @@ export default {
     return request
   },
 
-  update (data) {
+  update (payload) {
     let cancel
     const CANCEL_TOKEN = `${NAMESPACE}_UPDATE`
-    const request = resource.put(`${endpoint.patients.index}`, data, {
+    const request = resource.put(`${endpoint.patients.index}/${payload.id}`, payload.data, {
       cancelToken: new AxiosCancelToken(cancelRequest => {
         cancel = cancelRequest
       })

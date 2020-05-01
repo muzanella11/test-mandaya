@@ -68,6 +68,7 @@
 
           <v-col
             cols="3"
+            class="text-lg-right"
           >
             Halo Admin
           </v-col>

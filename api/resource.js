@@ -3,7 +3,7 @@ import handler from './handler'
 
 function createResource () {
   const instance = axios.create({
-    baseURL: process.env.baseURL,
+    baseURL: process.env.baseUrl,
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
